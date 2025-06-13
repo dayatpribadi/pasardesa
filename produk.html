@@ -269,8 +269,21 @@
         <div class="container">
             <div class="th-sort-bar">
                 <div class="row justify-content-between align-items-center">
-                    <div class="col-md">
+                    <div class="col-md-6">
                         <p class="woocommerce-result-count">Showing 1–12 of 16 results</p>
+                    </div>
+
+                    <div class="col-md-auto">
+                        <form class="woocommerce-ordering" method="get">
+                            <select name="orderby" class="orderby" aria-label="Shop order">
+                                <option value="menu_order" selected="selected">Lokasi Kecamatan</option>
+                                <option value="popularity">Kecamatan Indralaya</option>
+                                <option value="rating">Kecamatan Indralaya Utara</option>
+                                <option value="date">Kecamatan Indralaya Selatan</option>
+                                <option value="price">Kecamatan Pemulutan</option>
+                                <option value="price-desc">Kecamatan Tanjung Raja</option>
+                            </select>
+                        </form>
                     </div>
 
                     <div class="col-md-auto">
