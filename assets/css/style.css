@@ -2024,6 +2024,21 @@ textarea.is-invalid {
   }
 }
 
+.box-titled {
+  font-size: 14px;
+  line-height: 1.417;
+  font-weight: 600;
+  margin-top: -0.32em;
+}
+
+.box-titled a {
+  color: inherit;
+}
+
+.box-titled a:hover {
+  color: var(--theme-color);
+}
+
 .box-title {
   font-size: 24px;
   line-height: 1.417;
@@ -2346,6 +2361,10 @@ hr.title-line {
 
 .box-text {
   margin-bottom: -0.5em;
+}
+
+p.box-text {
+  font-size: 10px !important;
 }
 
 .btn-group {
@@ -14123,7 +14142,7 @@ span.select2-selection.select2-selection--single:focus {
 }
 
 .feature-list .box-text {
-  font-size: 14px;
+  font-size: 10px;
 }
 
 /* Large devices */
