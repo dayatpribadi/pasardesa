@@ -56,9 +56,6 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Tom Select CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.3.1/css/tom-select.min.css" rel="stylesheet">
-
 
 </head>
 
@@ -92,39 +89,11 @@
                             <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
                         </div>
                         <div class="product_meta">
-                            <table style="width: 100%; border-collapse: collapse; border: none">
-                                <tr>
-                                    <td style="vertical-align: top; width: 120px; ">
-                                        <strong>Desa</strong></td>
-
-                                    <td>
-                                        <a href="produk.html">
-                                            : Meranjat II
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="vertical-align: top; ">
-                                        <strong>Toko/Pedagang</strong></td>
-
-                                    <td>
-                                        <a href="produk.html">
-                                            : M. Fulan
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="vertical-align: top; ">
-                                        <strong>Kategori</strong></td>
-
-                                    <td>
-                                        <a href="produk.html">: Produk Lokal</a>
-                                    </td>
-                                </tr>
-                            </table>
+                            <span class="posted_in">Category: <a href="produk.html">Pasar Desa, Produk Lokal,
+                                </a></span>
+                            <span>Tags: <a href="produk.html">Produk Lokal</a><a href="produk.html">Produk
+                                    Desa</a></span>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -232,49 +201,11 @@
                         </div>
                     </div>
                     <div class="col-auto d-none d-lg-block">
-                        <div class="search-container">
-                            <form class="header-search" id="searchForm">
-                                <div class="search-input-wrapper">
-                                    <input type="text" id="searchInput" placeholder="Cari produk yang anda inginkan..."
-                                        autocomplete="off">
-                                    <button type="submit">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </div>
-                            </form>
-
-                            <div class="search-suggestions" id="suggestions">
-                                <!-- Popular Tags Section -->
-                                <div class="suggestions-header">
-                                    <h3 class="suggestions-title">
-                                        <i class="fas fa-fire"></i>
-                                        Pencarian Populer
-                                    </h3>
-                                    <div class="popular-tags" id="popularTags">
-                                        <button class="popular-tag" data-search="smartphone">Smartphone</button>
-                                        <button class="popular-tag" data-search="laptop gaming">Laptop Gaming</button>
-                                        <button class="popular-tag" data-search="fashion wanita">Fashion Wanita</button>
-                                        <button class="popular-tag" data-search="makanan sehat">Makanan Sehat</button>
-                                        <button class="popular-tag" data-search="skincare">Skincare</button>
-                                    </div>
-                                </div>
-
-                                <!-- Dynamic Suggestions -->
-                                <div id="dynamicSuggestions"></div>
-
-                                <!-- Recent Searches -->
-                                <div class="recent-searches" id="recentSearches" style="display: none;">
-                                    <h4 class="recent-title">
-                                        <i class="fas fa-history"></i>
-                                        Pencarian Terakhir
-                                    </h4>
-                                    <span class="clear-recent" onclick="clearRecentSearches()">Hapus Semua</span>
-                                    <div id="recentList"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <form class="header-search">
+                            <input type="text" placeholder="Cari produk yang anda inginkan...">
+                            <button type="submit"><i class="far fa-search"></i></button>
+                        </form>
                     </div>
-
                     <div class="col-auto">
                         <div class="header-icons">
                             <button type="button" class="icon-btn sideMenuInfo d-none d-lg-block"><i
@@ -334,7 +265,7 @@
         </div>
     </header>
 
-    <div class="th-hero-wrapper hero-3" id="hero">
+    <div class="space th-hero-wrapper hero-3" id="hero">
         <div class="shape-mockup" data-top="0" data-left="0"><img src="assets/img/shape/vector_shape_8.png" alt="shape">
         </div>
         <div class="shape-mockup" data-top="0" data-right="0"><img src="assets/img/shape/vector_shape_9.png"
@@ -342,11 +273,24 @@
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-xl-12">
-                    <div class="swiper th-slider" id="heroSlider3" data-slider-options='{"effect":"fade"}'>
+                    <div class="swiper th-slider rounded-10" id="heroSlider3" data-slider-options='{"effect":"fade"}'>
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="hero-inner" data-bg-src="assets/img/promo/bane1.png">
+                                <div class="hero-inner" data-bg-src="assets/img/product/1/15.jpg">
                                     <div class="hero-style3">
+                                        <span class="hero-subtitle" data-ani="slideinup" data-ani-delay="0.0s">100%
+                                            Produk Lokal</span>
+                                        <h1 class="hero-title2 text-white">
+                                            <span class="title1" data-ani="slideinup" data-ani-delay="0.2s">Dari Desa,
+                                            </span>
+                                            <span class="title2" data-ani="slideinup" data-ani-delay="0.3s">Ogan Ilir
+                                                Maju!</span>
+                                        </h1>
+                                        <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.5s">
+                                            Pasar Desa adalah platform digital berbasis website yang dirancang khusus
+                                            untuk
+                                            memfasilitasi desa-desa di Kabupaten Ogan Ilir dalam mempromosikan dan
+                                            menjual produk-produk lokal unggulan.</p>
                                         <a href="profil.html" class="th-btn style4" data-ani="slideinup"
                                             data-ani-delay="0.6s">Belanja Sekarang<i
                                                 class="fas fa-chevrons-right ms-2"></i></a>
@@ -354,8 +298,20 @@
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="hero-inner" data-bg-src="assets/img/promo/bane5.png">
+                                <div class="hero-inner" data-bg-src="assets/img/product/1/12.jpg">
                                     <div class="hero-style3">
+                                        <span class="hero-subtitle" data-ani="slideinup" data-ani-delay="0.0s">Pasar
+                                            Desa</span>
+                                        <h1 class="hero-title2 text-white">
+                                            <span class=" title1" data-ani="slideinup" data-ani-delay="0.2s">Pasar
+                                                Desa,</span>
+                                            <span class="title2" data-ani="slideinup" data-ani-delay="0.3s">Digitalisasi
+                                                Ekonomi Desa</span>
+                                        </h1>
+                                        <p class="hero-text text-white" data-ani=" slideinup" data-ani-delay="0.5s">
+                                            Aplikasi ini menjadi jembatan antara pelaku UMKM desa, pengrajin, petani,
+                                            nelayan, dan masyarakat umum dengan pasar yang lebih luas, baik di tingkat
+                                            kabupaten maupun nasional.</p>
                                         <a href="profil.html" class="th-btn style4" data-ani="slideinup"
                                             data-ani-delay="0.6s">Belanja Sekarang<i
                                                 class="fas fa-chevrons-right ms-2"></i></a>
@@ -363,8 +319,20 @@
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="hero-inner" data-bg-src="assets/img/promo/bane6.png">
+                                <div class="hero-inner" data-bg-src="assets/img/product/1/14.jpg">
                                     <div class="hero-style3">
+                                        <span class="hero-subtitle" data-ani="slideinup" data-ani-delay="0.0s">Pasar
+                                            Desa</span>
+                                        <h1 class="hero-title2 text-white">
+                                            <span class="title1" data-ani="slideinup" data-ani-delay="0.2s">Bangkitkan
+                                                Potensi Desa, </span>
+                                            <span class="title2" data-ani="slideinup" data-ani-delay="0.3s">Bersama
+                                                Pasar Desa</span>
+                                        </h1>
+                                        <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.5s">
+                                            Pasar Desa, membantu pelaku usaha desa memanfaatkan teknologi digital untuk
+                                            meningkatkan
+                                            pendapatan dan memperkuat daya saing produk lokal.</p>
                                         <a href="profil.html" class="th-btn style4" data-ani="slideinup"
                                             data-ani-delay="0.6s">Belanja Sekarang<i
                                                 class="fas fa-chevrons-right ms-2"></i></a>
@@ -378,84 +346,6 @@
             </div>
         </div>
     </div>
-
-    <section class="mt-4">
-        <div class="container">
-            <div class="feature-list-wrap">
-                <div class="feature-list">
-                    <div class="box-icon">
-                        <img src="assets/img/icon/feature_list_1.svg" alt="icon">
-                    </div>
-                    <div class="media-body">
-                        <h6 class="box-titled">Produk Lokal Berkualitas</h6>
-                        <p class="box-text">Langsung dari UMKM dan <br> pelaku usaha desa di Ogan Ilir.</p>
-                    </div>
-                </div>
-                <div class="feature-list-line"></div>
-                <div class="feature-list">
-                    <div class="box-icon">
-                        <img src="assets/img/icon/feature_list_2.svg" alt="icon">
-                    </div>
-                    <div class="media-body">
-                        <h3 class="box-titled">Belanja via WhatsApp</h3>
-                        <p class="box-text">Langsung chat penjual secara mudah.</p>
-                    </div>
-                </div>
-                <div class="feature-list-line"></div>
-                <div class="feature-list">
-                    <div class="box-icon">
-                        <img src="assets/img/icon/feature_list_3.svg" alt="icon">
-                    </div>
-                    <div class="media-body">
-                        <h3 class="box-titled">Dukung Ekonomi Desa</h3>
-                        <p class="box-text">Setiap transaksi Anda membantu <br> menggerakkan usaha lokal.</p>
-                    </div>
-                </div>
-                <div class="feature-list-line"></div>
-                <div class="feature-list">
-                    <div class="box-icon">
-                        <img src="assets/img/icon/feature_list_4.svg" alt="icon">
-                    </div>
-                    <div class="media-body">
-                        <h3 class="box-titled">Admin Siaga</h3>
-                        <p class="box-text">Hubungi kami jika ada kendala.</p>
-                    </div>
-                </div>
-                <div class="feature-list-line"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="mt-4">
-        <div class="container z-index-common">
-            <div class="row gy-4 justify-content-center">
-                <div class="col-xl-4 col-md-12">
-                    <div class="offer-box mega-hover" data-bg-src="assets/img/promo/1.png">
-                        <span class="box-subtitle">Termurah</span>
-                        <h3 class="box-title">Aneka Buah <br> dan Sayur</h3>
-                        <a href="produk.html" class="th-btn btn-sm">Belanja Sekarang<i
-                                class="fas fa-chevrons-right ms-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-12">
-                    <div class="offer-box mega-hover" data-bg-src="assets/img/promo/3.png">
-                        <span class="box-subtitle bg-theme">Terlengkap</span>
-                        <h3 class="box-title">Kebutuhan <br> Pokok</h3>
-                        <a href="produk.html" class="th-btn style4 btn-sm">Belanja Sekarang<i
-                                class="fas fa-chevrons-right ms-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-12">
-                    <div class="offer-box mega-hover" data-bg-src="assets/img/promo/2.png">
-                        <span class="box-subtitle">Serba Ada</span>
-                        <h3 class="box-title">Semua Serba <br> Ada disini </h3>
-                        <a href="produk.html" class="th-btn btn-sm">Belanja Sekarang<i
-                                class="fas fa-chevrons-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="space">
         <div class="container">
@@ -476,6 +366,26 @@
                             <button class="tab-btn" id="nav-three-tab" data-bs-toggle="tab" data-bs-target="#nav-three"
                                 role="tab" aria-controls="nav-three" aria-selected="false">Produk Lokal</button>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="th-sort-bar">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md">
+                        <p class="woocommerce-result-count">Showing 1–12 of 16 results</p>
+                    </div>
+
+                    <div class="col-md-auto">
+                        <form class="woocommerce-ordering" method="get">
+                            <select name="orderby" class="orderby" aria-label="Shop order">
+                                <option value="menu_order" selected="selected">Lokasi Pasar</option>
+                                <option value="popularity">Desa Pegayut</option>
+                                <option value="rating">Desa Beti</option>
+                                <option value="date">Desa Sungai Lebung</option>
+                                <option value="price">Desa Babatan Saudagar</option>
+                                <option value="price-desc">Desa Payakabung</option>
+                            </select>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -1231,7 +1141,7 @@
         </div>
     </section>
 
-    <section class="mt-4">
+    <section class="space">
         <div class="container">
             <div class="row flex-row-reverse">
                 <div class="col-xl-3 col-lg-4 col-md-6 mb-40 mb-lg-0">
@@ -1246,7 +1156,7 @@
                 <div class="col-xl-9 col-lg-8 col-md-6">
                     <div class="row justify-content-lg-between justify-content-center align-items-center">
                         <div class="col-md text-center text-md-start">
-                            <h2 class="sec-title mb-30">Produk Baru</h2>
+                            <h2 class="sec-title mb-30">Produk Terlaris</h2>
                         </div>
                         <div class="col-md-auto d-none d-lg-inline-block">
                             <div class="sec-btn mb-35">
@@ -1499,421 +1409,73 @@
         </div>
     </section>
 
-    <section class="bg-top-center overflow-hidden space-top">
+    <section class="space" id="blog-sec">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-md-8">
-                    <div class="title-area text-center">
-                        <h2 class="sec-title">Produk Asli Daerah</h2>
-                        <p class="sec-text">Aneka produk dan kerajinan khas ogan ilir yang
-                            menarik dan berkualitas.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="deal-sec-area">
-                <div class="row pt-50 gy-4 justify-content-center">
-                    <div class="col-xl-3 text-xl-start text-center">
-                        <div class="offer-grid mega-hover" data-bg-src="assets/img/pasarwdg.png">
-                            <span class="h6 box-subtitle text-white"><span class="text-white">Kerajinan <span
-                                        class="text-theme2">Lokal</span>
-                                    <h3 class="box-title text-white mt-2">Produk <br> Lokal Berkualitas</h3>
-                                    <a href="produk.html" class="th-btn btn-sm style2">Belanja Sekarang<i
-                                            class="fas fa-chevrons-right ms-2"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-xl-9">
-                        <div class="row gy-4">
-
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="th-product product-grid">
-                                    <div class="product-img">
-                                        <img src="assets/img/promo/produk-lokal-1.webp" alt="Product Image">
-                                        <span class="product-tag">Baru</span>
-                                        <div class="actions">
-                                            <a href="#QuickView" class="icon-btn popup-content"><i
-                                                    class="far fa-eye"></i></a>
-                                            <a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                            <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <a href="produk-details.html" class="product-category">Kerajinan Lokal</a>
-                                        <h3 class="product-title"><a href="produk-details.html">Aneka
-                                                Akesoris</a></h3>
-                                        <span class="price">Rp. 35.785</span>
-                                        <div class="woocommerce-product-rating">
-                                            <span class="count">(120 dilihat)</span>
-                                            <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                <span>Rated <strong class="rating">5.00</strong> out of 5 based on
-                                                    <span class="rating">1</span> customer rating</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="th-product product-grid">
-                                    <div class="product-img">
-                                        <img src="assets/img/product/1/6.jpg" alt="Product Image">
-                                        <span class="product-tag">Baru</span>
-                                        <div class="actions">
-                                            <a href="#QuickView" class="icon-btn popup-content"><i
-                                                    class="far fa-eye"></i></a>
-                                            <a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                            <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <a href="produk-details.html" class="product-category">Kerajinan Lokal</a>
-                                        <h3 class="product-title"><a href="produk-details.html">Tas Purun</a></h3>
-                                        <span class="price">Rp. 17.785</span>
-                                        <div class="woocommerce-product-rating">
-                                            <span class="count">(120 dilihat)</span>
-                                            <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                <span>Rated <strong class="rating">5.00</strong> out of 5 based on
-                                                    <span class="rating">1</span> customer rating</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="th-product product-grid">
-                                    <div class="product-img">
-                                        <img src="assets/img/promo/produk-lokal-2.jpg" alt="Product Image">
-                                        <span class="product-tag">Baru</span>
-                                        <div class="actions">
-                                            <a href="#QuickView" class="icon-btn popup-content"><i
-                                                    class="far fa-eye"></i></a>
-                                            <a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                            <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <a href="produk-details.html" class="product-category">Kerajinan Lokal</a>
-                                        <h3 class="product-title"><a href="produk-details.html">Aneka Tas Rajutan</a>
-                                        </h3>
-                                        <span class="price">Rp. 47.785</span>
-                                        <div class="woocommerce-product-rating">
-                                            <span class="count">(120 dilihat)</span>
-                                            <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                <span>Rated <strong class="rating">5.00</strong> out of 5 based on
-                                                    <span class="rating">1</span> customer rating</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="space">
-        <div class="container">
-            <div class="row justify-content-lg-between justify-content-center align-items-end">
+            <div class="row justify-content-lg-between justify-content-center align-items-center">
                 <div class="col-lg">
-                    <div class="title-area text-center text-lg-start">
-                        <h2 class="sec-title">Produk Terlaris</h2>
-                    </div>
+                    <h2 class="sec-title text-center text-lg-start">Berita Desa</h2>
                 </div>
-                <div class="col-auto mt-n2 mt-lg-0">
+                <div class="col-lg-auto d-none d-lg-block">
                     <div class="sec-btn">
-                        <div class="nav tab-menu1" role="tablist">
-                            <button class="tab-btn active" id="nav-one-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-one" role="tab" aria-controls="nav-one"
-                                aria-selected="true">Kuliner</button>
-                            <button class="tab-btn" id="nav-two-tab" data-bs-toggle="tab" data-bs-target="#nav-two"
-                                role="tab" aria-controls="nav-two" aria-selected="false">Kelontongan</button>
-                            <button class="tab-btn" id="nav-three-tab" data-bs-toggle="tab" data-bs-target="#nav-three"
-                                role="tab" aria-controls="nav-three" aria-selected="false">Produk Lokal</button>
-                        </div>
+                        <a href="berita.html" class="th-btn">Lainnya<i class="fas fa-chevrons-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="th-sort-bar">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-md">
-                        <p class="woocommerce-result-count">Showing 1–12 of 16 results</p>
-                    </div>
-
-                    <div class="col-md-auto">
-                        <form method="get">
-                            <select id="kecamatanSelect" class="custom-select-tom" name="orderby"
-                                placeholder="Pilih Kecamatan...">
-                                <option value="">Pilih Kecamatan...</option>
-                                <option value="indralaya">Kecamatan Indralaya</option>
-                                <option value="indralaya-utara">Kecamatan Indralaya Utara</option>
-                                <option value="indralaya-selatan">Kecamatan Indralaya Selatan</option>
-                                <option value="pemulutan">Kecamatan Pemulutan</option>
-                                <option value="tanjung-raja">Kecamatan Tanjung Raja</option>
-                            </select>
-                        </form>
-                    </div>
-
-                    <div class="col-md-auto">
-                        <form method="get">
-                            <select id="desaSelect" class="custom-select-tom" name="orderby"
-                                placeholder="Pilih Desa...">
-                                <option value="">Pilih Desa...</option>
-                                <option value="pegayut">Desa Pegayut</option>
-                                <option value="beti">Desa Beti</option>
-                                <option value="sungai-lebung">Desa Sungai Lebung</option>
-                                <option value="babatan-saudagar">Desa Babatan Saudagar</option>
-                                <option value="payakabung">Desa Payakabung</option>
-                            </select>
-                        </form>
-
+            <div class="row gy-4">
+                <div class="col-xl-4 col-md-6">
+                    <div class="blog-grid">
+                        <div class="blog-img">
+                            <img src="assets/img/product/1/15.jpg" alt="blog image">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a href="berita.html"><i class="far fa-eye"></i>20 dilihat</a>
+                                <a href="berita.html"><i class="far fa-calendar"></i>15 March, 2025</a>
+                            </div>
+                            <h3 class="box-title"><a href="berita-details.html">Change Your Eating Habits With Organic
+                                    Food</a></h3>
+                            <a href="berita-details.html" class="th-btn btn-sm style4">Selengkapnya<i
+                                    class="fas fa-chevrons-right ms-2"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="tab-content">
-                <div class="row gy-40">
 
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="th-product product-grid">
-                            <div class="product-img">
-                                <img src="assets/img/product/1/7.jpg" alt="Product Image">
-                                <span class="product-tag">Baru</span>
-                                <div class="actions">
-                                    <a href="#QuickView" class="icon-btn popup-content"><i class="far fa-eye"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
-                                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="blog-grid">
+                        <div class="blog-img">
+                            <img src="assets/img/product/1/12.jpg" alt="blog image">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a href="berita.html"><i class="far fa-eye"></i>39 dilihat</a>
+                                <a href="berita.html"><i class="far fa-calendar"></i>16 March, 2025</a>
                             </div>
-                            <div class="product-content">
-                                <a href="produk-details.html" class="product-category">Kerajinan Lokal</a>
-                                <h3 class="product-title"><a href="produk-details.html">Tas Purun</a></h3>
-                                <span class="price">Rp. 35.500</span>
-                                <div class="woocommerce-product-rating">
-                                    <span class="count">(120 dilihat)</span>
-                                    <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                        <span>Rated <strong class="rating">5.00</strong> out of 5 based on
-                                            <span class="rating">1</span> customer rating</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <h3 class="box-title"><a href="berita-details.html">Transform Your Nutrition with Organic
+                                    Meal</a></h3>
+                            <a href="berita-details.html" class="th-btn btn-sm style4">Selengkapnya<i
+                                    class="fas fa-chevrons-right ms-2"></i></a>
                         </div>
                     </div>
-
-
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="th-product product-grid">
-                            <div class="product-img">
-                                <img src="assets/img/product/1/6.jpg" alt="Product Image">
-                                <span class="product-tag">Baru</span>
-                                <div class="actions">
-                                    <a href="#QuickView" class="icon-btn popup-content"><i class="far fa-eye"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a href="produk-details.html" class="product-category">Kerajinan Lokal</a>
-                                <h3 class="product-title"><a href="produk-details.html">Tas Purun</a></h3>
-                                <span class="price">Rp. 17.785</span>
-                                <div class="woocommerce-product-rating">
-                                    <span class="count">(120 dilihat)</span>
-                                    <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                        <span>Rated <strong class="rating">5.00</strong> out of 5 based on
-                                            <span class="rating">1</span> customer rating</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="th-product product-grid">
-                            <div class="product-img">
-                                <img src="assets/img/product/1/5.webp" alt="Product Image">
-                                <span class="product-tag">Baru</span>
-                                <div class="actions">
-                                    <a href="#QuickView" class="icon-btn popup-content"><i class="far fa-eye"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a href="produk-details.html" class="product-category">Makanan Ringan
-                                    Lokal</a>
-                                <h3 class="product-title"><a href="produk-details.html">Kemplang Ikan
-                                        Belido</a>
-                                </h3>
-                                <span class="price">Rp. 10.000</span>
-                                <div class="woocommerce-product-rating">
-                                    <span class="count">(120 dilihat)</span>
-                                    <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                        <span>Rated <strong class="rating">5.00</strong> out of 5 based on
-                                            <span class="rating">1</span> customer rating</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="th-product product-grid">
-                            <div class="product-img">
-                                <img src="assets/img/product/1/9.webp" alt="Product Image">
-                                <span class="product-tag">Sale</span>
-                                <div class="actions">
-                                    <a href="#QuickView" class="icon-btn popup-content"><i class="far fa-eye"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a href="produk-details.html" class="product-category">Buah-buahan Lokal</a>
-                                <h3 class="product-title"><a href="produk-details.html">Nanas Asli
-                                        Senuro</a></h3>
-                                <span class="price">Rp. 15.000</span>
-                                <div class="woocommerce-product-rating">
-                                    <span class="count">(350 dilihat)</span>
-                                    <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                        <span>Rated <strong class="rating">5.00</strong> out of 5 based on
-                                            <span class="rating">1</span> customer rating</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="th-product product-grid">
-                            <div class="product-img">
-                                <img src="assets/img/product/1/8.jpg" alt="Product Image">
-                                <span class="product-tag">Baru</span>
-                                <div class="actions">
-                                    <a href="#QuickView" class="icon-btn popup-content"><i class="far fa-eye"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a href="produk-details.html" class="product-category">Buah-buahan Lokal</a>
-                                <h3 class="product-title"><a href="produk-details.html">Nanas Asli
-                                        Senuro</a></h3>
-                                <span class="price">Rp. 13.000</span>
-                                <div class="woocommerce-product-rating">
-                                    <span class="count">(350 dilihat)</span>
-                                    <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                        <span>Rated <strong class="rating">5.00</strong> out of 5 based on
-                                            <span class="rating">1</span> customer rating</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="th-product product-grid">
-                            <div class="product-img">
-                                <img src="assets/img/product/1/7.jpg" alt="Product Image">
-                                <span class="product-tag">Baru</span>
-                                <div class="actions">
-                                    <a href="#QuickView" class="icon-btn popup-content"><i class="far fa-eye"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a href="produk-details.html" class="product-category">Kerajinan Lokal</a>
-                                <h3 class="product-title"><a href="produk-details.html">Tas Purun</a></h3>
-                                <span class="price">Rp. 35.500</span>
-                                <div class="woocommerce-product-rating">
-                                    <span class="count">(120 dilihat)</span>
-                                    <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                        <span>Rated <strong class="rating">5.00</strong> out of 5 based on
-                                            <span class="rating">1</span> customer rating</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="th-product product-grid">
-                            <div class="product-img">
-                                <img src="assets/img/product/1/4.jpg" alt="Product Image">
-                                <span class="product-tag">Baru</span>
-                                <div class="actions">
-                                    <a href="#QuickView" class="icon-btn popup-content"><i class="far fa-eye"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a href="produk-details.html" class="product-category">Makanan Ringan
-                                    Lokal</a>
-                                <h3 class="product-title"><a href="produk-details.html">Kemplang Ikan
-                                        Gabus</a>
-                                </h3>
-                                <span class="price">Rp. 40.000</span>
-                                <div class="woocommerce-product-rating">
-                                    <span class="count">(120 dilihat)</span>
-                                    <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                        <span>Rated <strong class="rating">5.00</strong> out of 5 based on
-                                            <span class="rating">1</span> customer rating</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="th-product product-grid">
-                            <div class="product-img">
-                                <img src="assets/img/product/1/2.jpg" alt="Product Image">
-                                <span class="product-tag">Hot</span>
-                                <div class="actions">
-                                    <a href="#QuickView" class="icon-btn popup-content"><i class="far fa-eye"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                    <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a href="produk-details.html" class="product-category">Makanan Ringan
-                                    Lokal</a>
-                                <h3 class="product-title"><a href="produk-details.html">Aneka Kue
-                                        Semprong</a>
-                                </h3>
-                                <span class="price">Rp. 10.000</span>
-                                <div class="woocommerce-product-rating">
-                                    <span class="count">(120 dilihat)</span>
-                                    <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                        <span>Rated <strong class="rating">5.00</strong> out of 5 based on
-                                            <span class="rating">1</span> customer rating</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-                <div class="th-pagination text-center pt-50">
-                    <ul>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#"><i class="far fa-arrow-right"></i></a></li>
-                    </ul>
+
+                <div class="col-xl-4 col-md-6">
+                    <div class="blog-grid">
+                        <div class="blog-img">
+                            <img src="assets/img/product/1/13.jpeg" alt="blog image">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a href="berita.html"><i class="far fa-eye"></i>30 dilihat</a>
+                                <a href="berita.html"><i class="far fa-calendar"></i>17 March, 2025</a>
+                            </div>
+                            <h3 class="box-title"><a href="berita-details.html">Organic Eating Is Great For Better
+                                    Health</a></h3>
+                            <a href="berita-details.html" class="th-btn btn-sm style4">Selengkapnya<i
+                                    class="fas fa-chevrons-right ms-2"></i></a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -1989,419 +1551,10 @@
     <!-- Main Js File -->
     <script src="assets/js/main.js"></script>
 
-    <!-- Tom Select JS -->
-    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
 
 
-    <script>
-        // Mencegah scroll otomatis saat focus
-        function preventScrollOnFocus() {
-            const originalScrollTo = window.scrollTo;
-            const originalScrollBy = window.scrollBy;
-            const originalScrollIntoView = Element.prototype.scrollIntoView;
 
-            let preventScroll = false;
 
-            window.scrollTo = function (...args) {
-                if (!preventScroll) originalScrollTo.apply(this, args);
-            };
-
-            window.scrollBy = function (...args) {
-                if (!preventScroll) originalScrollBy.apply(this, args);
-            };
-
-            Element.prototype.scrollIntoView = function (...args) {
-                if (!preventScroll) originalScrollIntoView.apply(this, args);
-            };
-
-            return {
-                enable: () => {
-                    preventScroll = true;
-                },
-                disable: () => {
-                    preventScroll = false;
-                }
-            };
-        }
-
-        const scrollPreventer = preventScrollOnFocus();
-
-        // Fungsi umum untuk inisialisasi TomSelect
-        function initTomSelect(selector, placeholder = "Pilih...") {
-            const element = document.querySelector(selector);
-            if (element) {
-                console.log('Initializing TomSelect for:', selector);
-
-                const tomSelect = new TomSelect(selector, {
-                    create: false,
-                    sortField: {
-                        field: "text",
-                        direction: "asc"
-                    },
-                    placeholder: placeholder,
-                    allowEmptyOption: true,
-                    maxOptions: null,
-                    searchField: ['text', 'value'],
-                    render: {
-                        option: function (data, escape) {
-                            return '<div class="option">' + escape(data.text) + '</div>';
-                        },
-                        item: function (data, escape) {
-                            return '<div class="item">' + escape(data.text || data.value) + '</div>';
-                        }
-                    },
-                    onInitialize: function () {
-                        console.log('TomSelect initialized for:', selector);
-                    },
-                    onDropdownOpen: function () {
-                        console.log('Dropdown opened for:', selector);
-                        // Mencegah scroll saat dropdown dibuka
-                        scrollPreventer.enable();
-                        document.body.classList.add('dropdown-open');
-
-                        // Pastikan dropdown tetap dalam viewport
-                        setTimeout(() => {
-                            const dropdown = this.dropdown;
-                            if (dropdown) {
-                                const rect = dropdown.getBoundingClientRect();
-                                const viewportHeight = window.innerHeight;
-
-                                if (rect.bottom > viewportHeight) {
-                                    dropdown.style.maxHeight = (viewportHeight - rect.top - 20) +
-                                        'px';
-                                }
-                            }
-                        }, 10);
-                    },
-                    onDropdownClose: function () {
-                        console.log('Dropdown closed for:', selector);
-                        // Mengizinkan scroll kembali setelah dropdown ditutup
-                        setTimeout(() => {
-                            scrollPreventer.disable();
-                            document.body.classList.remove('dropdown-open');
-                        }, 100);
-                    },
-                    onFocus: function () {
-                        // Mencegah scroll saat input focus
-                        scrollPreventer.enable();
-                        setTimeout(() => scrollPreventer.disable(), 200);
-                    },
-                    onChange: function (value) {
-                        console.log('Value changed to:', value, 'for:', selector);
-                    }
-                });
-
-                // Mencegah scroll saat klik pada control
-                const control = element.parentNode.querySelector('.ts-control');
-                if (control) {
-                    control.addEventListener('mousedown', function (e) {
-                        scrollPreventer.enable();
-                        setTimeout(() => scrollPreventer.disable(), 100);
-                    });
-
-                    control.addEventListener('click', function (e) {
-                        scrollPreventer.enable();
-                        setTimeout(() => scrollPreventer.disable(), 100);
-                    });
-                }
-
-                return tomSelect;
-            } else {
-                console.error('Element not found:', selector);
-            }
-        }
-
-        // Inisialisasi semua select setelah DOM ready
-        document.addEventListener("DOMContentLoaded", function () {
-            console.log('DOM Content Loaded');
-
-            // Tunggu sebentar untuk memastikan semua element sudah ready
-            setTimeout(function () {
-                const kecamatanSelect = initTomSelect("#kecamatanSelect", "Cari Kecamatan...");
-                const desaSelect = initTomSelect("#desaSelect", "Cari Desa...");
-
-                // Debug: Cek apakah element ada
-                console.log('Kecamatan element:', document.querySelector("#kecamatanSelect"));
-                console.log('Desa element:', document.querySelector("#desaSelect"));
-
-            }, 100);
-        });
-
-        // Mencegah scroll saat ada interaksi dengan TomSelect
-        document.addEventListener('click', function (e) {
-            if (e.target.closest('.ts-control') || e.target.closest('.ts-wrapper')) {
-                console.log('Clicked on TomSelect element:', e.target);
-                scrollPreventer.enable();
-                setTimeout(() => scrollPreventer.disable(), 200);
-            }
-        });
-
-        // Mencegah scroll pada touchstart untuk mobile
-        document.addEventListener('touchstart', function (e) {
-            if (e.target.closest('.ts-control') || e.target.closest('.ts-wrapper')) {
-                scrollPreventer.enable();
-                setTimeout(() => scrollPreventer.disable(), 200);
-            }
-        });
-    </script>
-
-    <script>
-        // Data produk populer dan rekomendasi
-        const popularProducts = [{
-                title: "iPhone 15 Pro Max",
-                category: "Smartphone Terbaru",
-                icon: "fas fa-mobile-alt",
-                iconClass: "category-electronics",
-                count: "2.5k pencarian",
-                keywords: ["iphone", "smartphone", "apple", "hp"]
-            },
-            {
-                title: "Laptop ASUS ROG",
-                category: "Gaming Laptop",
-                icon: "fas fa-laptop",
-                iconClass: "category-electronics",
-                count: "1.8k pencarian",
-                keywords: ["laptop", "gaming", "asus", "rog"]
-            },
-            {
-                title: "Sepatu Nike Air Jordan",
-                category: "Fashion Pria",
-                icon: "fas fa-shoe-prints",
-                iconClass: "category-fashion",
-                count: "1.2k pencarian",
-                keywords: ["sepatu", "nike", "jordan", "fashion"]
-            },
-            {
-                title: "Skincare Korea",
-                category: "Kecantikan",
-                icon: "fas fa-spa",
-                iconClass: "category-beauty",
-                count: "3.1k pencarian",
-                keywords: ["skincare", "korea", "beauty", "kecantikan"]
-            },
-            {
-                title: "Kopi Arabica Premium",
-                category: "Minuman",
-                icon: "fas fa-coffee",
-                iconClass: "category-food",
-                count: "900 pencarian",
-                keywords: ["kopi", "arabica", "premium", "minuman"]
-            },
-            {
-                title: "Furniture Minimalis",
-                category: "Rumah & Dekorasi",
-                icon: "fas fa-couch",
-                iconClass: "category-home",
-                count: "750 pencarian",
-                keywords: ["furniture", "minimalis", "rumah", "dekorasi"]
-            },
-            {
-                title: "Tas Wanita Branded",
-                category: "Fashion Wanita",
-                icon: "fas fa-handbag",
-                iconClass: "category-fashion",
-                count: "2.2k pencarian",
-                keywords: ["tas", "wanita", "branded", "fashion"]
-            },
-            {
-                title: "Vitamin & Suplemen",
-                category: "Kesehatan",
-                icon: "fas fa-pills",
-                iconClass: "category-beauty",
-                count: "1.5k pencarian",
-                keywords: ["vitamin", "suplemen", "kesehatan", "obat"]
-            }
-        ];
-
-        // State management
-        let recentSearches = [];
-        let currentQuery = '';
-
-        // DOM Elements
-        const searchInput = document.getElementById('searchInput');
-        const suggestions = document.getElementById('suggestions');
-        const dynamicSuggestions = document.getElementById('dynamicSuggestions');
-        const recentSearchesDiv = document.getElementById('recentSearches');
-        const recentList = document.getElementById('recentList');
-        const searchForm = document.getElementById('searchForm');
-
-        // Load recent searches from localStorage
-        function loadRecentSearches() {
-            const saved = localStorage.getItem('recentSearches');
-            if (saved) {
-                recentSearches = JSON.parse(saved);
-                updateRecentSearchesDisplay();
-            }
-        }
-
-        // Save recent searches to localStorage
-        function saveRecentSearches() {
-            localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
-        }
-
-        // Add to recent searches
-        function addToRecentSearches(query) {
-            if (query.trim() === '') return;
-
-            // Remove if already exists
-            recentSearches = recentSearches.filter(item => item.toLowerCase() !== query.toLowerCase());
-
-            // Add to beginning
-            recentSearches.unshift(query);
-
-            // Keep only last 5 searches
-            recentSearches = recentSearches.slice(0, 5);
-
-            saveRecentSearches();
-            updateRecentSearchesDisplay();
-        }
-
-        // Update recent searches display
-        function updateRecentSearchesDisplay() {
-            if (recentSearches.length === 0) {
-                recentSearchesDiv.style.display = 'none';
-                return;
-            }
-
-            recentSearchesDiv.style.display = 'block';
-            recentList.innerHTML = recentSearches.map(search => `
-                <div class="recent-item" onclick="selectSearch('${search}')">
-                    <i class="fas fa-history"></i>
-                    <span class="recent-text">${search}</span>
-                </div>
-            `).join('');
-        }
-
-        // Clear recent searches
-        function clearRecentSearches() {
-            recentSearches = [];
-            localStorage.removeItem('recentSearches');
-            updateRecentSearchesDisplay();
-        }
-
-        // Filter products based on query
-        function filterProducts(query) {
-            if (!query) return [];
-
-            const lowerQuery = query.toLowerCase();
-            return popularProducts.filter(product =>
-                product.title.toLowerCase().includes(lowerQuery) ||
-                product.category.toLowerCase().includes(lowerQuery) ||
-                product.keywords.some(keyword => keyword.toLowerCase().includes(lowerQuery))
-            ).slice(0, 6); // Limit to 6 results
-        }
-
-        // Render suggestions
-        function renderSuggestions(products) {
-            if (products.length === 0) {
-                dynamicSuggestions.innerHTML = '';
-                return;
-            }
-
-            dynamicSuggestions.innerHTML = products.map(product => `
-                <div class="suggestion-item" onclick="selectSearch('${product.title}')">
-                    <div class="suggestion-icon ${product.iconClass}">
-                        <i class="${product.icon}"></i>
-                    </div>
-                    <div class="suggestion-content">
-                        <h4 class="suggestion-title">${product.title}</h4>
-                        <p class="suggestion-desc">${product.category}</p>
-                    </div>
-                    <span class="suggestion-count">${product.count}</span>
-                </div>
-            `).join('');
-        }
-
-        // Select search term
-        function selectSearch(query) {
-            searchInput.value = query;
-            currentQuery = query;
-            hideSuggestions();
-            addToRecentSearches(query);
-
-            // Simulate search action
-            console.log('Searching for:', query);
-            // Here you would typically submit the form or make an API call
-        }
-
-        // Show suggestions
-        function showSuggestions() {
-            suggestions.classList.add('show');
-        }
-
-        // Hide suggestions
-        function hideSuggestions() {
-            setTimeout(() => {
-                suggestions.classList.remove('show');
-            }, 150);
-        }
-
-        // Event Listeners
-        searchInput.addEventListener('focus', () => {
-            showSuggestions();
-            if (currentQuery) {
-                const filtered = filterProducts(currentQuery);
-                renderSuggestions(filtered);
-            }
-        });
-
-        searchInput.addEventListener('blur', hideSuggestions);
-
-        searchInput.addEventListener('input', (e) => {
-            currentQuery = e.target.value;
-            const filtered = filterProducts(currentQuery);
-            renderSuggestions(filtered);
-
-            if (currentQuery.length > 0) {
-                showSuggestions();
-            }
-        });
-
-        // Popular tags click handler
-        document.getElementById('popularTags').addEventListener('click', (e) => {
-            if (e.target.classList.contains('popular-tag')) {
-                const searchTerm = e.target.getAttribute('data-search');
-                selectSearch(searchTerm);
-            }
-        });
-
-        // Form submit handler
-        searchForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const query = searchInput.value.trim();
-            if (query) {
-                addToRecentSearches(query);
-                hideSuggestions();
-                console.log('Form submitted with query:', query);
-                // Here you would handle the actual search
-                alert(`Mencari: "${query}"`);
-            }
-        });
-
-        // Click outside to close suggestions
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.search-container')) {
-                suggestions.classList.remove('show');
-            }
-        });
-
-        // Keyboard navigation
-        searchInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                hideSuggestions();
-                searchInput.blur();
-            }
-        });
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            loadRecentSearches();
-        });
-
-        // Expose functions to global scope for onclick handlers
-        window.selectSearch = selectSearch;
-        window.clearRecentSearches = clearRecentSearches;
-    </script>
 </body>
 
 </html>

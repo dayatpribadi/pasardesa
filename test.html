@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Dropdown Fixed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.3.1/css/tom-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.3.1/js/tom-select.complete.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .form-container {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .col-md-auto {
+            position: relative;
+        }
+
+        /* Mencegah scroll dan menjaga posisi */
+        .custom-select-tom {
+            width: 100% !important;
+            min-width: 200px;
+            /* Mencegah focus scroll */
+            scroll-margin: 0 !important;
+            scroll-behavior: auto !important;
+        }
+
+        .ts-wrapper {
+            width: 350px !important;
+            height: 50px;
+            box-sizing: border-box;
+            border-radius: 12px;
+            border: 1px solid #ccc !important;
+            background-color: #fff;
+            font-size: 14px;
+            position: relative !important;
+            z-index: 1000 !important;
+            /* Mencegah perubahan layout saat focus */
+            transform: translateZ(0);
+            /* Hardware acceleration */
+            will-change: auto;
+        }
+
+        .ts-wrapper .ts-control {
+            padding: 0 12px !important;
+            border: none !important;
+            border-radius: 12px;
+            box-shadow: none !important;
+            align-items: center;
+            display: flex !important;
+            height: 48px !important;
+            min-height: 48px !important;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background: transparent !important;
+            /* Mencegah scroll saat input focus */
+            outline: none !important;
+            user-select: none;
+        }
+
+        .ts-wrapper .ts-control input {
+            /* Mencegah scroll otomatis ke input */
+            outline: none !important;
+            border: none !important;
+            background: transparent !important;
+            /* Kritical untuk mencegah scroll */
+            scroll-margin-top: 0 !important;
+            scroll-margin-bottom: 0 !important;
+        }
+
+        .ts-wrapper .ts-control .item {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .ts-wrapper.focus {
+            border-color: #017D03 !important;
+            box-shadow: 0 0 0 2px rgba(1, 125, 3, 0.2) !important;
+            /* Mencegah layout shift saat focus */
+            transform: translateZ(0);
+        }
+
+        /* CRITICAL: Dropdown styling - dengan posisi yang stabil */
+        .ts-wrapper .ts-dropdown {
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 10000 !important;
+            border-radius: 8px !important;
+            border: 1px solid #ccc !important;
+            padding: 8px !important;
+            font-size: 14px !important;
+            background: white !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+            max-height: 200px !important;
+            overflow-y: auto !important;
+            margin-top: 2px !important;
+            /* Mencegah dropdown mempengaruhi scroll */
+            transform: translateZ(0);
+            will-change: transform, opacity;
+        }
+
+        .ts-wrapper .ts-dropdown .option {
+            padding: 8px 16px !important;
+            border-radius: 4px !important;
+            cursor: pointer !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            color: #333 !important;
+            background: transparent !important;
+        }
+
+        .ts-wrapper .ts-dropdown .option:hover,
+        .ts-wrapper .ts-dropdown .option.active {
+            background-color: #017D03 !important;
+            color: white !important;
+        }
+
+        .ts-wrapper .ts-dropdown .option.selected {
+            background-color: #e8f5e8 !important;
+            color: #017D03 !important;
+        }
+
+        /* Mencegah scroll behavior pada body saat dropdown dibuka */
+        body.dropdown-open {
+            overflow: visible !important;
+            position: relative !important;
+        }
+
+        /* Placeholder styling */
+        .ts-wrapper .ts-control input::placeholder {
+            color: #999;
+            opacity: 1;
+        }
+
+        .ts-wrapper .ts-control .placeholder {
+            color: #999;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="col-md-auto">
+            <form class="woocommerce-ordering" method="get">
+                <select id="kecamatanSelect" class="custom-select-tom" name="orderby">
+                    <option value="">Pilih Kecamatan...</option>
+                    <option value="indralaya">Kecamatan Indralaya</option>
+                    <option value="indralaya-utara">Kecamatan Indralaya Utara</option>
+                    <option value="indralaya-selatan">Kecamatan Indralaya Selatan</option>
+                    <option value="pemulutan">Kecamatan Pemulutan</option>
+                    <option value="tanjung-raja">Kecamatan Tanjung Raja</option>
+                </select>
+            </form>
+        </div>
+
+        <div class="col-md-auto">
+            <form class="woocommerce-ordering" method="get">
+                <select id="desaSelect" class="custom-select-tom" name="orderby">
+                    <option value="">Pilih Desa...</option>
+                    <option value="pegayut">Desa Pegayut</option>
+                    <option value="beti">Desa Beti</option>
+                    <option value="sungai-lebung">Desa Sungai Lebung</option>
+                    <option value="babatan-saudagar">Desa Babatan Saudagar</option>
+                    <option value="payakabung">Desa Payakabung</option>
+                </select>
+            </form>
+        </div>
+    </div>
+
+    <div
+        style="height: 500px; margin-top: 50px; background: linear-gradient(45deg, #f0f0f0, #e0e0e0); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #666;">
+        <p>Konten tambahan untuk testing scroll behavior</p>
+    </div>
+
+    <script>
+        // Mencegah scroll otomatis saat focus
+        function preventScrollOnFocus() {
+            const originalScrollTo = window.scrollTo;
+            const originalScrollBy = window.scrollBy;
+            const originalScrollIntoView = Element.prototype.scrollIntoView;
+
+            let preventScroll = false;
+
+            window.scrollTo = function (...args) {
+                if (!preventScroll) originalScrollTo.apply(this, args);
+            };
+
+            window.scrollBy = function (...args) {
+                if (!preventScroll) originalScrollBy.apply(this, args);
+            };
+
+            Element.prototype.scrollIntoView = function (...args) {
+                if (!preventScroll) originalScrollIntoView.apply(this, args);
+            };
+
+            return {
+                enable: () => {
+                    preventScroll = true;
+                },
+                disable: () => {
+                    preventScroll = false;
+                }
+            };
+        }
+
+        const scrollPreventer = preventScrollOnFocus();
+
+        // Fungsi umum untuk inisialisasi TomSelect
+        function initTomSelect(selector, placeholder = "Pilih...") {
+            const element = document.querySelector(selector);
+            if (element) {
+                console.log('Initializing TomSelect for:', selector);
+
+                const tomSelect = new TomSelect(selector, {
+                    create: false,
+                    sortField: {
+                        field: "text",
+                        direction: "asc"
+                    },
+                    placeholder: placeholder,
+                    allowEmptyOption: true,
+                    maxOptions: null,
+                    searchField: ['text', 'value'],
+                    render: {
+                        option: function (data, escape) {
+                            return '<div class="option">' + escape(data.text) + '</div>';
+                        },
+                        item: function (data, escape) {
+                            return '<div class="item">' + escape(data.text || data.value) + '</div>';
+                        }
+                    },
+                    onInitialize: function () {
+                        console.log('TomSelect initialized for:', selector);
+                    },
+                    onDropdownOpen: function () {
+                        console.log('Dropdown opened for:', selector);
+                        // Mencegah scroll saat dropdown dibuka
+                        scrollPreventer.enable();
+                        document.body.classList.add('dropdown-open');
+
+                        // Pastikan dropdown tetap dalam viewport
+                        setTimeout(() => {
+                            const dropdown = this.dropdown;
+                            if (dropdown) {
+                                const rect = dropdown.getBoundingClientRect();
+                                const viewportHeight = window.innerHeight;
+
+                                if (rect.bottom > viewportHeight) {
+                                    dropdown.style.maxHeight = (viewportHeight - rect.top - 20) +
+                                        'px';
+                                }
+                            }
+                        }, 10);
+                    },
+                    onDropdownClose: function () {
+                        console.log('Dropdown closed for:', selector);
+                        // Mengizinkan scroll kembali setelah dropdown ditutup
+                        setTimeout(() => {
+                            scrollPreventer.disable();
+                            document.body.classList.remove('dropdown-open');
+                        }, 100);
+                    },
+                    onFocus: function () {
+                        // Mencegah scroll saat input focus
+                        scrollPreventer.enable();
+                        setTimeout(() => scrollPreventer.disable(), 200);
+                    },
+                    onChange: function (value) {
+                        console.log('Value changed to:', value, 'for:', selector);
+                    }
+                });
+
+                // Mencegah scroll saat klik pada control
+                const control = element.parentNode.querySelector('.ts-control');
+                if (control) {
+                    control.addEventListener('mousedown', function (e) {
+                        scrollPreventer.enable();
+                        setTimeout(() => scrollPreventer.disable(), 100);
+                    });
+
+                    control.addEventListener('click', function (e) {
+                        scrollPreventer.enable();
+                        setTimeout(() => scrollPreventer.disable(), 100);
+                    });
+                }
+
+                return tomSelect;
+            } else {
+                console.error('Element not found:', selector);
+            }
+        }
+
+        // Inisialisasi semua select setelah DOM ready
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log('DOM Content Loaded');
+
+            // Tunggu sebentar untuk memastikan semua element sudah ready
+            setTimeout(function () {
+                const kecamatanSelect = initTomSelect("#kecamatanSelect", "Cari Kecamatan...");
+                const desaSelect = initTomSelect("#desaSelect", "Cari Desa...");
+
+                // Debug: Cek apakah element ada
+                console.log('Kecamatan element:', document.querySelector("#kecamatanSelect"));
+                console.log('Desa element:', document.querySelector("#desaSelect"));
+
+            }, 100);
+        });
+
+        // Mencegah scroll saat ada interaksi dengan TomSelect
+        document.addEventListener('click', function (e) {
+            if (e.target.closest('.ts-control') || e.target.closest('.ts-wrapper')) {
+                console.log('Clicked on TomSelect element:', e.target);
+                scrollPreventer.enable();
+                setTimeout(() => scrollPreventer.disable(), 200);
+            }
+        });
+
+        // Mencegah scroll pada touchstart untuk mobile
+        document.addEventListener('touchstart', function (e) {
+            if (e.target.closest('.ts-control') || e.target.closest('.ts-wrapper')) {
+                scrollPreventer.enable();
+                setTimeout(() => scrollPreventer.disable(), 200);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Search Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .header-search {
+            position: relative;
+            background: white;
+            border-radius: 50px;
+            padding: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .header-search:focus-within {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+
+        .search-input-wrapper {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .header-search input[type="text"] {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 50px;
+            background: transparent;
+            color: #333;
+        }
+
+        .header-search input[type="text"]::placeholder {
+            color: #999;
+            font-weight: 300;
+        }
+
+        .header-search button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 50px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .header-search button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .header-search button i {
+            color: white;
+            font-size: 18px;
+        }
+
+        /* Dropdown Suggestions */
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .search-suggestions.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .suggestions-header {
+            padding: 20px 25px 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .suggestions-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .suggestions-title i {
+            color: #ff6b6b;
+        }
+
+        .popular-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .popular-tag {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .popular-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .suggestion-item {
+            padding: 12px 25px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #f8f8f8;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .suggestion-item:hover {
+            background: #f8f9ff;
+            padding-left: 30px;
+        }
+
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+
+        .suggestion-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white;
+        }
+
+        .suggestion-content {
+            flex: 1;
+        }
+
+        .suggestion-title {
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+            margin: 0 0 3px 0;
+        }
+
+        .suggestion-desc {
+            font-size: 12px;
+            color: #666;
+            margin: 0;
+        }
+
+        .suggestion-count {
+            font-size: 11px;
+            color: #999;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        /* Category Icons */
+        .category-food {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+        }
+
+        .category-fashion {
+            background: linear-gradient(45deg, #a8e6cf, #7fcdcd);
+        }
+
+        .category-electronics {
+            background: linear-gradient(45deg, #ffd93d, #ffb347);
+        }
+
+        .category-home {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+
+        .category-beauty {
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+        }
+
+        /* Recent Searches */
+        .recent-searches {
+            padding: 15px 25px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .recent-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #666;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .recent-title i {
+            color: #999;
+        }
+
+        .recent-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .recent-item:hover {
+            color: #667eea;
+        }
+
+        .recent-item i {
+            color: #ccc;
+            font-size: 12px;
+        }
+
+        .recent-text {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .clear-recent {
+            color: #ff6b6b;
+            font-size: 12px;
+            cursor: pointer;
+            float: right;
+            margin-top: -20px;
+        }
+
+        .clear-recent:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .search-container {
+                margin: 20px auto;
+                padding: 0 10px;
+            }
+
+            .header-search input[type="text"] {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+
+            .suggestion-item {
+                padding: 10px 20px;
+            }
+
+            .suggestions-header {
+                padding: 15px 20px 10px;
+            }
+        }
+
+        /* Custom Scrollbar */
+        .search-suggestions::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .search-suggestions::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .search-suggestions::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        .search-suggestions::-webkit-scrollbar-thumb:hover {
+            background: #5a67d8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search-container">
+        <form class="header-search" id="searchForm">
+            <div class="search-input-wrapper">
+                <input type="text" id="searchInput" placeholder="Cari produk yang anda inginkan..." autocomplete="off">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+
+        <div class="search-suggestions" id="suggestions">
+            <!-- Popular Tags Section -->
+            <div class="suggestions-header">
+                <h3 class="suggestions-title">
+                    <i class="fas fa-fire"></i>
+                    Pencarian Populer
+                </h3>
+                <div class="popular-tags" id="popularTags">
+                    <button class="popular-tag" data-search="smartphone">Smartphone</button>
+                    <button class="popular-tag" data-search="laptop gaming">Laptop Gaming</button>
+                    <button class="popular-tag" data-search="fashion wanita">Fashion Wanita</button>
+                    <button class="popular-tag" data-search="makanan sehat">Makanan Sehat</button>
+                    <button class="popular-tag" data-search="skincare">Skincare</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Suggestions -->
+            <div id="dynamicSuggestions"></div>
+
+            <!-- Recent Searches -->
+            <div class="recent-searches" id="recentSearches" style="display: none;">
+                <h4 class="recent-title">
+                    <i class="fas fa-history"></i>
+                    Pencarian Terakhir
+                </h4>
+                <span class="clear-recent" onclick="clearRecentSearches()">Hapus Semua</span>
+                <div id="recentList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data produk populer dan rekomendasi
+        const popularProducts = [{
+                title: "iPhone 15 Pro Max",
+                category: "Smartphone Terbaru",
+                icon: "fas fa-mobile-alt",
+                iconClass: "category-electronics",
+                count: "2.5k pencarian",
+                keywords: ["iphone", "smartphone", "apple", "hp"]
+            },
+            {
+                title: "Laptop ASUS ROG",
+                category: "Gaming Laptop",
+                icon: "fas fa-laptop",
+                iconClass: "category-electronics",
+                count: "1.8k pencarian",
+                keywords: ["laptop", "gaming", "asus", "rog"]
+            },
+            {
+                title: "Sepatu Nike Air Jordan",
+                category: "Fashion Pria",
+                icon: "fas fa-shoe-prints",
+                iconClass: "category-fashion",
+                count: "1.2k pencarian",
+                keywords: ["sepatu", "nike", "jordan", "fashion"]
+            },
+            {
+                title: "Skincare Korea",
+                category: "Kecantikan",
+                icon: "fas fa-spa",
+                iconClass: "category-beauty",
+                count: "3.1k pencarian",
+                keywords: ["skincare", "korea", "beauty", "kecantikan"]
+            },
+            {
+                title: "Kopi Arabica Premium",
+                category: "Minuman",
+                icon: "fas fa-coffee",
+                iconClass: "category-food",
+                count: "900 pencarian",
+                keywords: ["kopi", "arabica", "premium", "minuman"]
+            },
+            {
+                title: "Furniture Minimalis",
+                category: "Rumah & Dekorasi",
+                icon: "fas fa-couch",
+                iconClass: "category-home",
+                count: "750 pencarian",
+                keywords: ["furniture", "minimalis", "rumah", "dekorasi"]
+            },
+            {
+                title: "Tas Wanita Branded",
+                category: "Fashion Wanita",
+                icon: "fas fa-handbag",
+                iconClass: "category-fashion",
+                count: "2.2k pencarian",
+                keywords: ["tas", "wanita", "branded", "fashion"]
+            },
+            {
+                title: "Vitamin & Suplemen",
+                category: "Kesehatan",
+                icon: "fas fa-pills",
+                iconClass: "category-beauty",
+                count: "1.5k pencarian",
+                keywords: ["vitamin", "suplemen", "kesehatan", "obat"]
+            }
+        ];
+
+        // State management
+        let recentSearches = [];
+        let currentQuery = '';
+
+        // DOM Elements
+        const searchInput = document.getElementById('searchInput');
+        const suggestions = document.getElementById('suggestions');
+        const dynamicSuggestions = document.getElementById('dynamicSuggestions');
+        const recentSearchesDiv = document.getElementById('recentSearches');
+        const recentList = document.getElementById('recentList');
+        const searchForm = document.getElementById('searchForm');
+
+        // Load recent searches from localStorage
+        function loadRecentSearches() {
+            const saved = localStorage.getItem('recentSearches');
+            if (saved) {
+                recentSearches = JSON.parse(saved);
+                updateRecentSearchesDisplay();
+            }
+        }
+
+        // Save recent searches to localStorage
+        function saveRecentSearches() {
+            localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+        }
+
+        // Add to recent searches
+        function addToRecentSearches(query) {
+            if (query.trim() === '') return;
+
+            // Remove if already exists
+            recentSearches = recentSearches.filter(item => item.toLowerCase() !== query.toLowerCase());
+
+            // Add to beginning
+            recentSearches.unshift(query);
+
+            // Keep only last 5 searches
+            recentSearches = recentSearches.slice(0, 5);
+
+            saveRecentSearches();
+            updateRecentSearchesDisplay();
+        }
+
+        // Update recent searches display
+        function updateRecentSearchesDisplay() {
+            if (recentSearches.length === 0) {
+                recentSearchesDiv.style.display = 'none';
+                return;
+            }
+
+            recentSearchesDiv.style.display = 'block';
+            recentList.innerHTML = recentSearches.map(search => `
+                <div class="recent-item" onclick="selectSearch('${search}')">
+                    <i class="fas fa-history"></i>
+                    <span class="recent-text">${search}</span>
+                </div>
+            `).join('');
+        }
+
+        // Clear recent searches
+        function clearRecentSearches() {
+            recentSearches = [];
+            localStorage.removeItem('recentSearches');
+            updateRecentSearchesDisplay();
+        }
+
+        // Filter products based on query
+        function filterProducts(query) {
+            if (!query) return [];
+
+            const lowerQuery = query.toLowerCase();
+            return popularProducts.filter(product =>
+                product.title.toLowerCase().includes(lowerQuery) ||
+                product.category.toLowerCase().includes(lowerQuery) ||
+                product.keywords.some(keyword => keyword.toLowerCase().includes(lowerQuery))
+            ).slice(0, 6); // Limit to 6 results
+        }
+
+        // Render suggestions
+        function renderSuggestions(products) {
+            if (products.length === 0) {
+                dynamicSuggestions.innerHTML = '';
+                return;
+            }
+
+            dynamicSuggestions.innerHTML = products.map(product => `
+                <div class="suggestion-item" onclick="selectSearch('${product.title}')">
+                    <div class="suggestion-icon ${product.iconClass}">
+                        <i class="${product.icon}"></i>
+                    </div>
+                    <div class="suggestion-content">
+                        <h4 class="suggestion-title">${product.title}</h4>
+                        <p class="suggestion-desc">${product.category}</p>
+                    </div>
+                    <span class="suggestion-count">${product.count}</span>
+                </div>
+            `).join('');
+        }
+
+        // Select search term
+        function selectSearch(query) {
+            searchInput.value = query;
+            currentQuery = query;
+            hideSuggestions();
+            addToRecentSearches(query);
+
+            // Simulate search action
+            console.log('Searching for:', query);
+            // Here you would typically submit the form or make an API call
+        }
+
+        // Show suggestions
+        function showSuggestions() {
+            suggestions.classList.add('show');
+        }
+
+        // Hide suggestions
+        function hideSuggestions() {
+            setTimeout(() => {
+                suggestions.classList.remove('show');
+            }, 150);
+        }
+
+        // Event Listeners
+        searchInput.addEventListener('focus', () => {
+            showSuggestions();
+            if (currentQuery) {
+                const filtered = filterProducts(currentQuery);
+                renderSuggestions(filtered);
+            }
+        });
+
+        searchInput.addEventListener('blur', hideSuggestions);
+
+        searchInput.addEventListener('input', (e) => {
+            currentQuery = e.target.value;
+            const filtered = filterProducts(currentQuery);
+            renderSuggestions(filtered);
+
+            if (currentQuery.length > 0) {
+                showSuggestions();
+            }
+        });
+
+        // Popular tags click handler
+        document.getElementById('popularTags').addEventListener('click', (e) => {
+            if (e.target.classList.contains('popular-tag')) {
+                const searchTerm = e.target.getAttribute('data-search');
+                selectSearch(searchTerm);
+            }
+        });
+
+        // Form submit handler
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const query = searchInput.value.trim();
+            if (query) {
+                addToRecentSearches(query);
+                hideSuggestions();
+                console.log('Form submitted with query:', query);
+                // Here you would handle the actual search
+                alert(`Mencari: "${query}"`);
+            }
+        });
+
+        // Click outside to close suggestions
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-container')) {
+                suggestions.classList.remove('show');
+            }
+        });
+
+        // Keyboard navigation
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                hideSuggestions();
+                searchInput.blur();
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadRecentSearches();
+        });
+
+        // Expose functions to global scope for onclick handlers
+        window.selectSearch = selectSearch;
+        window.clearRecentSearches = clearRecentSearches;
+    </script>
+</body>
+
+</html>

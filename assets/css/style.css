@@ -186,8 +186,8 @@ th {
 
 td,
 th {
-  border: 1px solid var(--th-border-color);
-  padding: 9px 12px;
+  border: 0px solid var(--th-border-color);
+  padding: 6px 12px;
 }
 
 a {
@@ -583,7 +583,7 @@ h6 {
 }
 
 /*------------------- 2.3. Input -------------------*/
-select,
+/* select,
 .form-control,
 .form-select,
 textarea,
@@ -600,7 +600,7 @@ input {
   font-family: var(--body-font);
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
-}
+} */
 
 select:focus,
 .form-control:focus,
@@ -5741,7 +5741,7 @@ ol.wp-block-rss {
 .header-search input {
   height: 46px;
   border: 1px solid var(--th-border-color);
-  width: 500px;
+  width: 600px;
   max-width: 100%;
   /* Large devices */
 }
@@ -15806,5 +15806,455 @@ span.select2-selection.select2-selection--single:focus {
   color: #fff;
   /* pastikan teks warna putih agar kontras */
 }
+
+/* Tom Select Custom Styling - FIXED VERSION */
+/* Mencegah scroll dan menjaga posisi */
+.custom-select-tom {
+  width: 100% !important;
+  min-width: 200px;
+  /* Mencegah focus scroll */
+  scroll-margin: 0 !important;
+  scroll-behavior: auto !important;
+}
+
+.ts-wrapper {
+  width: 350px !important;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: 1px solid #ccc !important;
+  background-color: #fff;
+  font-size: 14px;
+  position: relative !important;
+  z-index: 1000 !important;
+  /* Mencegah perubahan layout saat focus */
+  transform: translateZ(0);
+  /* Hardware acceleration */
+  will-change: auto;
+}
+
+.ts-wrapper .ts-control {
+  padding: 0 12px !important;
+  border: none !important;
+  border-radius: 12px;
+  box-shadow: none !important;
+  align-items: center;
+  display: flex !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: transparent !important;
+  /* Mencegah scroll saat input focus */
+  outline: none !important;
+  user-select: none;
+}
+
+.ts-wrapper .ts-control input {
+  /* Mencegah scroll otomatis ke input */
+  outline: none !important;
+  border: none !important;
+  background: transparent !important;
+  /* Kritical untuk mencegah scroll */
+  scroll-margin-top: 0 !important;
+  scroll-margin-bottom: 0 !important;
+}
+
+.ts-wrapper .ts-control .item {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.ts-wrapper.focus {
+  border-color: #017D03 !important;
+  box-shadow: 0 0 0 2px rgba(1, 125, 3, 0.2) !important;
+  /* Mencegah layout shift saat focus */
+  transform: translateZ(0);
+}
+
+/* CRITICAL: Dropdown styling - dengan posisi yang stabil */
+.ts-wrapper .ts-dropdown {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 10000 !important;
+  border-radius: 8px !important;
+  border: 1px solid #ccc !important;
+  padding: 8px !important;
+  font-size: 14px !important;
+  background: white !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  max-height: 200px !important;
+  overflow-y: auto !important;
+  margin-top: 2px !important;
+  /* Mencegah dropdown mempengaruhi scroll */
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+.ts-wrapper .ts-dropdown .option {
+  padding: 8px 16px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  color: #333 !important;
+  background: transparent !important;
+}
+
+.ts-wrapper .ts-dropdown .option:hover,
+.ts-wrapper .ts-dropdown .option.active {
+  background-color: #017D03 !important;
+  color: white !important;
+}
+
+.ts-wrapper .ts-dropdown .option.selected {
+  background-color: #e8f5e8 !important;
+  color: #017D03 !important;
+}
+
+/* Mencegah scroll behavior pada body saat dropdown dibuka */
+body.dropdown-open {
+  overflow: visible !important;
+  position: relative !important;
+}
+
+/* Placeholder styling */
+.ts-wrapper .ts-control input::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+.ts-wrapper .ts-control .placeholder {
+  color: #999;
+  pointer-events: none;
+}
+
+.form-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+  max-width: 600px;
+  margin: 10px auto;
+  position: relative;
+  border: 2px solid #017D03;
+  background: white;
+  border-radius: 50px;
+}
+
+.header-search {
+  position: relative;
+  /* background: white; */
+  border-radius: 50px;
+  padding: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.header-search:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+  /* border-color: #017D03; */
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.header-search input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 15px 20px;
+  font-size: 16px;
+  border-radius: 50px;
+  background: transparent;
+  color: #333;
+}
+
+.header-search input[type="text"]::placeholder {
+  color: #999;
+  font-weight: 300;
+}
+
+.header-search button {
+  background: linear-gradient(45deg, #017D03, #1DCD9F);
+  border: none;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.header-search button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.header-search button i {
+  color: white;
+  font-size: 18px;
+}
+
+/* Dropdown Suggestions */
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.search-suggestions.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.suggestions-header {
+  padding: 20px 25px 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.suggestions-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  margin: 0 0 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.suggestions-title i {
+  color: #FFA955;
+}
+
+.popular-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.popular-tag {
+  background: linear-gradient(45deg, #FEBA17, #FFA955);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.popular-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.suggestion-item {
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f8f8f8;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.suggestion-item:hover {
+  background: #f8f9ff;
+  padding-left: 30px;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+}
+
+.suggestion-content {
+  flex: 1;
+}
+
+.suggestion-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 3px 0;
+}
+
+.suggestion-desc {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.suggestion-count {
+  font-size: 11px;
+  color: #999;
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* Category Icons */
+.category-food {
+  background: linear-gradient(45deg, #FEBA17, #FFA955);
+}
+
+.category-fashion {
+  background: linear-gradient(45deg, #a8e6cf, #7fcdcd);
+}
+
+.category-electronics {
+  background: linear-gradient(45deg, #ffd93d, #ffb347);
+}
+
+.category-home {
+  background: linear-gradient(45deg, #017D03, #1DCD9F);
+}
+
+.category-beauty {
+  background: linear-gradient(45deg, #FFA955, #fecfef);
+}
+
+/* Recent Searches */
+.recent-searches {
+  padding: 15px 25px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.recent-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recent-title i {
+  color: #999;
+}
+
+.recent-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.recent-item:hover {
+  color: #017D03;
+}
+
+.recent-item i {
+  color: #ccc;
+  font-size: 12px;
+}
+
+.recent-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.clear-recent {
+  color: #FFA955;
+  font-size: 12px;
+  cursor: pointer;
+  float: right;
+  margin-top: -20px;
+}
+
+.clear-recent:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-container {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  .header-search input[type="text"] {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .suggestion-item {
+    padding: 10px 20px;
+  }
+
+  .suggestions-header {
+    padding: 15px 20px 10px;
+  }
+}
+
+/* Custom Scrollbar */
+.search-suggestions::-webkit-scrollbar {
+  width: 4px;
+}
+
+.search-suggestions::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb {
+  background: #017D03;
+  border-radius: 10px;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb:hover {
+  background: #017D03;
+}
+
 
 /*# sourceMappingURL=style.css.map */
